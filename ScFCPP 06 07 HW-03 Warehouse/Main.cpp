@@ -1,34 +1,33 @@
 #include <iostream>
 #include <string>
 #include <locale.h>
+#include "HomeAppliances.h"
+#include "Notebook.h"
+#include "Computer.h"
+#include "VacuumCleaner.h"
+#include "RobotVacuunCleaner.h"
+
 using namespace std;
 
 int getNumber(string prompt = "Введите число: ");
 bool isInteger(string input);
-
+HomeAppliances* warehouse[6];
 
 int main() {
     setlocale(LC_ALL, "Russian");
+    warehouse[0] = new Notebook("Super", "Sony", 100000, 17);
+    warehouse[1] = new Computer("Optima", "Sony", 20000, "Intel", 20);
+    warehouse[2] = new VacuumCleaner("Home", "Hoover", 5000, 150);
+    warehouse[3] = new RobotVacuumCleaner("Home", "Hoover", 30000, 100);
+    warehouse[4] = new Notebook("Super", "Sony", 100000, 12);
+    warehouse[5] = new Computer("Light", "Dell", 15000);
+    int choise;
     while (true)
     {
-        switch (getNumber("Введите число от 1 до 5 (любое другое число - выход из программы): ")) {
-        case 1:
-            cout << 1 << endl;
-            break;
-        case 2:
-            cout << 2 << endl;
-            break;
-        case 3:
-            cout << 3 << endl;
-            break;
-        case 4:
-            cout << 4 << endl;
-            break;
-        case 5:
-            cout << 5 << endl;
-            break;
-
-        default: 
+        choise = getNumber("Введите число от 1 до 6 (любое другое число - выход из программы): ");
+        if (choise >= 1 && choise <= 6)
+            warehouse[choise - 1]->showInformation();
+        else {
             cout << "До свидания." << endl;
             return 0;
         }
