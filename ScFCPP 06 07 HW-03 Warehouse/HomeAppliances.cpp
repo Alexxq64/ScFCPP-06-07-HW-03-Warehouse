@@ -3,16 +3,26 @@
 
 
 HomeAppliances::HomeAppliances(const std::string name, const std::string manufacturer, unsigned int price) :
-	_name(name), _manufacturer(manufacturer), _price(price) {}
+	_name(name), _manufacturer(manufacturer), _price(price) {
+	// Testing
+	//std::cout << " Base class constructed " << std::endl;
+}
 
 HomeAppliances::HomeAppliances(){
+	// Testing
+		//std::cout << " Base class constructed " << std::endl;
+}
+
+HomeAppliances::~HomeAppliances(){
+	// Testing
+		//std::cout << " Base class destructed " << std::endl;
 }
 
 
 void HomeAppliances::showInformation(){
-	std::cout << "Производитель: " << _manufacturer << std::endl;
-	std::cout << "Наименование: " << _name << std::endl;
-	std::cout << "Цена: " << _price << std::endl;
+	std::cout << _manufacturer;
+	std::cout << " " << _name;
+	std::cout << "       Цена: " << _price << std::endl;
 }
 
 std::string HomeAppliances::getName(){

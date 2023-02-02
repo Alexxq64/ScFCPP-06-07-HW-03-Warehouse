@@ -5,7 +5,7 @@ Notebook::Notebook(std::string name, std::string manufacturer, unsigned int pric
 	HomeAppliances::HomeAppliances(name, manufacturer, price), _screenDiagonal(screenDiagonal){}
 
 void Notebook::showInformation(){
-	HomeAppliances::showInformation();
-	std::cout << "Ноутбук." << std::endl;
+	std::cout << "Ноутбук.         ";
 	std::cout << "Диагональ: " << _screenDiagonal << std::endl;
+	HomeAppliances::showInformation();
 }

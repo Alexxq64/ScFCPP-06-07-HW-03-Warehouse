@@ -5,9 +5,9 @@ VacuumCleaner::VacuumCleaner(std::string name, std::string manufacturer, unsigne
 	HomeAppliances::HomeAppliances(name, manufacturer, price), _power(power) {}
 
 void VacuumCleaner::showInformation() {
-	HomeAppliances::showInformation();
-	std::cout << "Пылесос." << std::endl;
+	std::cout << "Пылесос.        ";
 	std::cout << "Мощность: " << _power << std::endl;
+	HomeAppliances::showInformation();
 }
 
 

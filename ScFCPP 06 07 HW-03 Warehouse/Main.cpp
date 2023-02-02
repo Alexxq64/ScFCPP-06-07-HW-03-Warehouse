@@ -18,17 +18,23 @@ int main() {
     warehouse[0] = new Notebook("Super", "Sony", 100000, 17);
     warehouse[1] = new Computer("Optima", "Sony", 20000, "Intel", 20);
     warehouse[2] = new VacuumCleaner("Home", "Hoover", 5000, 150);
+    // this item gets fields _processor and _memory from its parent class by default by using one of parent constructors
     warehouse[3] = new RobotVacuumCleaner("Home", "Hoover", 30000, 100);
-    warehouse[4] = new Notebook("Super", "Sony", 100000, 12);
+    warehouse[4] = new Notebook("Student", "Lenovo", 100000, 12);
     warehouse[5] = new Computer("Light", "Dell", 15000);
     int choise;
     while (true)
     {
         choise = getNumber("Введите число от 1 до 6 (любое другое число - выход из программы): ");
-        if (choise >= 1 && choise <= 6)
+        if (choise >= 1 && choise <= 6) {
             warehouse[choise - 1]->showInformation();
+            cout << endl;
+        }
         else {
             cout << "До свидания." << endl;
+            //delete warehouse[0];
+            //if (warehouse)
+            //    delete[] warehouse;
             return 0;
         }
     }
